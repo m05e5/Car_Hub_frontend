@@ -3,5 +3,53 @@
 }
 
 .sideNav {
-  width: 20vw;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  border-right: 2px solid rgb(224, 224, 224);
+  padding-top: 3rem;
+  height: 100vh;
+}
+
+.logo_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 200px;
+}
+
+
+
+.nav_ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 13vw;
+}
+
+.nav_li {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: rgb(68, 68, 68);
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.selected_nav {
+  background-color: rgb(118, 192, 58);
+}
+
+.selected_nav a {
+  color: white;
 }
