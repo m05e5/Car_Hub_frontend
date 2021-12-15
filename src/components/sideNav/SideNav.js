@@ -12,7 +12,7 @@ const SideNav = () => {
       <nav>
         <ul className='nav_ul'>
           <li className="nav_li" id='home_link'>
-            <Link className="nav_link " to="/">Home</Link>
+            <Link className="nav_link " to="/">Models</Link>
           </li>
           <li className="nav_li" id='create_link'>
             <Link className="nav_link" to="/create">Create</Link>

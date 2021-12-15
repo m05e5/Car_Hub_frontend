@@ -17,7 +17,7 @@ const Reserve = () => {
   }, []);
 
   return (
-    <div>
+    <div className='container'>
       <p>Reserve</p>
     </div>
   )

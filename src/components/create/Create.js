@@ -19,7 +19,7 @@ const Create = () => {
 
   return (
 
-  <div>
+  <div className='container'>
     <p>Create</p>
   </div>
 )
