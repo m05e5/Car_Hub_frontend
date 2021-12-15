@@ -5,6 +5,7 @@ import style from './model.module.css';
 import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
 
 import Carousel from 'react-material-ui-carousel';
+import Car from './Car';
 
 const modelsUrl = ' https://carhubackend.herokuapp.com/models';
 
@@ -54,57 +55,9 @@ const Home = () => {
           {stateModel.map((model, index, arr) => (
             
             <div className={style.cars} >
-              <div className={style.car} >
-                <img src={model.image} alt="model" className={style.car_img}  />
-                <h3 className={style.car_name}>{model.name}</h3>
-                <div className={style.divider}/>
-                <p className={style.car_desc}>{ model.description }</p>
-                <div className={style.medias}>
-                  <div className={style.media_div}>
-                    <Facebook className={style.media} />
-                  </div>
-                  <div className={style.media_div}>
-                    <Twitter className={style.media} />
-                  </div>
-                  <div className={style.media_div}>
-                    <Instagram className={style.media} />
-                  </div>
-                </div>
-              </div>
-              <div className={style.car} >
-                <img src={arr[index+1] !== undefined ? arr[index+1].image : arr[0].image} alt="model" className={style.car_img}  />
-                <h3 className={style.car_name}>{arr[index+1] !== undefined ? arr[index+1].name : arr[0].name}</h3>
-                <div className={style.divider}/>
-                <p className={style.car_desc}>{ arr[index+1] !== undefined ? arr[index+1].description : arr[0].description }</p>
-                <div className={style.medias}>
-                  <div className={style.media_div}>
-                    <Facebook className={style.media} />
-                  </div>
-                  <div className={style.media_div}>
-                    <Twitter className={style.media} />
-                  </div>
-                  <div className={style.media_div}>
-                    <Instagram className={style.media} />
-                  </div>
-                </div>
-              </div>
-              <div className={style.car} >
-                <img src={arr[index+2] !== undefined ? arr[index+2].image : arr[1].image} alt="model" className={style.car_img}  />
-                <h3 className={style.car_name}>{arr[index+2] !== undefined ? arr[index+2].name : arr[1].name}</h3>
-                <div className={style.divider}/>
-                <p className={style.car_desc}>{ arr[index+2] !== undefined ? arr[index+2].description : arr[1].description }</p>
-                <div className={style.medias}>
-                  <div className={style.media_div}>
-                    <Facebook className={style.media} />
-                  </div>
-                  <div className={style.media_div}>
-                    <Twitter className={style.media} />
-                  </div>
-                  <div className={style.media_div}>
-                    <Instagram className={style.media} />
-                  </div>
-                </div>
-              </div>
+              <Car car={ model } />
+              <Car car={ arr[index+1] !== undefined ? arr[index+1] : arr[0] } />
+              <Car car={ arr[index+2] !== undefined ? arr[index+2] : arr[1] } />
             </div>
           ))}
         </Carousel>
