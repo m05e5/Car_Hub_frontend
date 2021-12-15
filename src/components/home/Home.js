@@ -42,6 +42,8 @@ const Home = () => {
         className={style.car_carousel}
         navButtonsAlwaysVisible={true}
         swipe={true}
+        animation={"fade"}
+        indicators={false}
         navButtonsProps={{ 
           style: {
               backgroundColor: "#6db126",
@@ -70,10 +72,27 @@ const Home = () => {
                 </div>
               </div>
               <div className={style.car} >
-                <img src={arr[index+1] !== undefined ? arr[index+1].image : arr[1].image} alt="model" className={style.car_img}  />
-                <h3 className={style.car_name}>{arr[index+1] !== undefined ? arr[index+1].name : arr[1].name}</h3>
+                <img src={arr[index+1] !== undefined ? arr[index+1].image : arr[0].image} alt="model" className={style.car_img}  />
+                <h3 className={style.car_name}>{arr[index+1] !== undefined ? arr[index+1].name : arr[0].name}</h3>
                 <div className={style.divider}/>
-                <p className={style.car_desc}>{ arr[index+1] !== undefined ? arr[index+1].description : arr[1].description }</p>
+                <p className={style.car_desc}>{ arr[index+1] !== undefined ? arr[index+1].description : arr[0].description }</p>
+                <div className={style.medias}>
+                  <div className={style.media_div}>
+                    <Facebook className={style.media} />
+                  </div>
+                  <div className={style.media_div}>
+                    <Twitter className={style.media} />
+                  </div>
+                  <div className={style.media_div}>
+                    <Instagram className={style.media} />
+                  </div>
+                </div>
+              </div>
+              <div className={style.car} >
+                <img src={arr[index+2] !== undefined ? arr[index+2].image : arr[1].image} alt="model" className={style.car_img}  />
+                <h3 className={style.car_name}>{arr[index+2] !== undefined ? arr[index+2].name : arr[1].name}</h3>
+                <div className={style.divider}/>
+                <p className={style.car_desc}>{ arr[index+2] !== undefined ? arr[index+2].description : arr[1].description }</p>
                 <div className={style.medias}>
                   <div className={style.media_div}>
                     <Facebook className={style.media} />
