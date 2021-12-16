@@ -73,8 +73,6 @@
   color: white;
 }
 
-
-
 @media only screen and (max-width: 668px) {
   .sideNav {
     display: none;
@@ -85,7 +83,6 @@
   }
 
   .mobile_nav {
-    display: block;
     margin-top: 2vh;
     display: flex;
     flex-direction: column;
