@@ -14,6 +14,10 @@
   position: fixed;
 }
 
+.mobile_nav {
+  display: none;
+}
+
 .container {
   margin-left: 16vw;
 }
@@ -49,10 +53,130 @@
   font-weight: bold;
 }
 
+.modal_nav_link {
+  text-decoration: none;
+  color: rgb(68, 68, 68);
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal_nav_link:hover {
+  color: white;
+}
+
 .selected_nav {
   background-color: rgb(118, 192, 58);
 }
 
 .selected_nav a {
   color: white;
+}
+
+
+
+@media only screen and (max-width: 668px) {
+  .sideNav {
+    display: none;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .mobile_nav {
+    display: block;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 10px 1rem 10px 1rem;
+    background-color: rgb(118, 192, 58);
+    width: 40px;
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+  }
+
+  .mobile_nav:hover {
+    width: 65px;
+  }
+
+  .mobile_logo_div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mobile_logo {
+    width: 70%;
+  }
+}
+
+/* styling of my modal ------------------------------------------ */
+.modal-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.modal {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(209, 209, 209, 0.95);
+  z-index: 3;
+  flex-direction: column;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  color: black;
+  font-size: 20px;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 85.3211009174312%;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-title {
+  font-size: 20px;
+  align-self: center;
+  color: black;
+  text-align: left;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.X {
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+
+.down {
+  margin-top: 57px;
 }

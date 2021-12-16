@@ -10,6 +10,15 @@
   width: 83vw;
 }
 
+.mobile_carousel {
+  display: none;
+}
+
+.car_link {
+  width: 30%;
+  text-decoration: none;
+}
+
 .car {
   display: flex;
   flex-direction: column;
@@ -17,7 +26,7 @@
   justify-content: space-between;
   text-align: center;
   height: 70vh;
-  width: 40%;
+  width: 90%;
   margin: 1rem;
 }
 
@@ -54,4 +63,20 @@
 
 .media {
   color: rgb(184, 184, 184);
+}
+
+@media only screen and (max-width: 668px) {
+  .car_carousel {
+    
+    display: none;
+  }
+
+  .mobile_carousel {
+    display: block;
+    margin-top: 5vh;
+  }
+
+  .car {
+    width: 70%;
+  }
 }
