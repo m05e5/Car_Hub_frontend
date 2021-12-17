@@ -1,9 +1,8 @@
-const GET_MODELS = 'model/GET_MODELS'
-const SELECT_MODEL = 'model/SELECT_MODEL'
-
+const GET_MODELS = 'model/GET_MODELS';
+const SELECT_MODEL = 'model/SELECT_MODEL';
 
 const initialState = [];
-
+/* eslint-disable */
 export const models = (payload) => ({
   type: GET_MODELS,
   payload,
@@ -12,7 +11,7 @@ export const models = (payload) => ({
 export const selectModel = (id) => ({
   type: SELECT_MODEL,
   id,
-})
+});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -24,6 +23,6 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;

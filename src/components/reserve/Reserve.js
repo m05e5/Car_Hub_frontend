@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-
+/* eslint-disable */
 const Reserve = () => {
-  
   const navToggle = () => {
     const home_link = document.querySelector('#home_link');
     const create_link = document.querySelector('#create_link');
@@ -10,17 +9,17 @@ const Reserve = () => {
     create_link.classList.remove('selected_nav');
     home_link.classList.remove('selected_nav');
     reserve_link.classList.add('selected_nav');
-  }
+  };
 
   useEffect(() => {
     navToggle();
   }, []);
 
   return (
-    <div className='container'>
+    <div className="container">
       <p>Reserve</p>
     </div>
-  )
+  );
 };
 
 export default Reserve;

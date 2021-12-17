@@ -1,0 +1,68 @@
+.detail_view {
+  display: flex;
+  width: 83vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail_image {
+  width: 70%;
+  height: 70vh;
+}
+
+.car_details {
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.car_fee {
+  padding: 0 1rem 0 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+}
+
+.dark {
+  background-color: rgb(231, 231, 231);
+}
+
+.car_fee p {
+  font-weight: bold;
+  color: rgb(68, 68, 68);
+}
+
+.back_link {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 10px 1rem 10px 1rem;
+  background-color: rgb(118, 192, 58);
+  width: 60px;
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+}
+
+@media only screen and (max-width: 668px) {
+  .detail_view {
+    display: block;
+    width: 98vw;
+  }
+
+  .detail_image {
+    width: 100%;
+    height: auto;
+  }
+
+  .car_details {
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
