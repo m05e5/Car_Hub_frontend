@@ -75,8 +75,8 @@ const Home = () => {
             <NavLink to="/car" className={style.car_link} onClick={() => selectCar(arr[index+1] !== undefined ? arr[index+1].id : arr[0].id)}>
                 <Car car={ arr[index+1] !== undefined ? arr[index+1] : arr[0] } />
             </NavLink>
-            <NavLink to="/car" className={style.car_link} onClick={() => selectCar(arr[index+1] !== undefined ? arr[index+1].id : arr[0].id)}>
-                <Car car={ arr[index+1] !== undefined ? arr[index+1] : arr[0] } />
+            <NavLink to="/car" className={style.car_link} onClick={() => selectCar(arr[index+2] !== undefined ? arr[index+2].id : arr[1].id)}>
+                <Car car={ arr[index+2] !== undefined ? arr[index+2] : arr[1] } />
             </NavLink>
           </div>
         ))}
@@ -97,7 +97,9 @@ const Home = () => {
         {stateModel.map((model, index, arr) => (
 
           <div className={style.cars}>
-            <Car car={model} />
+            <NavLink to="/car" className={style.mobile_car_link} onClick={() => selectCar(model.id)}>
+              <Car car={model} />
+            </NavLink>
           </div>
         ))}
       </Carousel>

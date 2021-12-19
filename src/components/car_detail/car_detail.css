@@ -48,6 +48,19 @@
   border: none;
 }
 
+.rent_link {
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px 1rem 10px 1rem;
+  background-color: rgb(118, 192, 58);
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
 @media only screen and (max-width: 668px) {
   .detail_view {
     display: block;

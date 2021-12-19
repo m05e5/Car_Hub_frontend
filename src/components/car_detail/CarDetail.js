@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { CaretLeft } from 'react-bootstrap-icons';
+import { CaretLeft, CaretRight } from 'react-bootstrap-icons';
 import { NavLink } from 'react-router-dom';
 import './car_detail.css';
 
@@ -48,6 +48,10 @@ const CarDetail = () => {
             <p>Duration</p>
             <p> 3 Months </p>
           </div>
+          <button type="button" className="rent_link" id="modal-displayer">
+            Rent Car
+            <CaretRight size={20} />
+          </button>
         </div>
       </div>
       <NavLink to="/">
