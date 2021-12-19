@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import logo from '../img/image.png';
+import { ifConnected } from '../../ApiCall.js'
 
 const SideNav = () => {
+
+  let a = ifConnected()
+  console.log(a)
 
   return (
     <div className='sideNav'>

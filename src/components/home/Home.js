@@ -24,11 +24,11 @@ const Home = () => {
   }
 
   const getModels = () => {
-    // if (!stateModel.length > 0) {
+     if (stateModel.length === 0) {
       fetch(modelsUrl).then((data) => {
         data.json().then((dataJson) => dispatch(models(dataJson)));
       });
-    // }
+     }
   };
 
   useEffect(() => {
