@@ -61,6 +61,124 @@
   border: none;
 }
 
+/* styling of my modal ------------------------------------------ */
+.reserve_modal-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.reserve_modal {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(130, 211, 0, 0.9);
+  z-index: 3;
+  flex-direction: column;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  color: black;
+  font-size: 20px;
+}
+
+.reserve_modal::-webkit-scrollbar {
+  display: none;
+}
+
+.reserve_modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 85.3211009174312%;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reserve_modal-title {
+  font-size: 20px;
+  align-self: center;
+  color: black;
+  text-align: left;
+}
+
+.reserve_modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70%;
+  color: white;
+}
+
+.X_reserve {
+  cursor: pointer;
+}
+
+.x_p {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 6px 10px 6px 10px;
+  border-radius: 10px;
+}
+
+.reserve_modal_p {
+  width: 50%;
+  font-size: 15px;
+}
+
+.modal_divider {
+  width: 40%;
+  border: 1px solid  rgb(230, 230, 230);
+}
+
+#fcountry {
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 5px;
+  margin: 0 7px 0 7px;
+}
+
+#fdate {
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 7px;
+  background-color: white;
+  border: none;
+  margin: 0 7px 0 7px;
+}
+
+.fsubmit {
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 5px 16px 5px 16px;
+  margin: 0 7px 0 7px;
+}
+
+.down {
+  margin-top: 57px;
+}
+
+
 @media only screen and (max-width: 668px) {
   .detail_view {
     display: block;

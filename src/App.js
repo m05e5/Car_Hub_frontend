@@ -12,7 +12,7 @@ import logo from './components/img/image.png';
 import { List } from 'react-bootstrap-icons';
 import SideNav from './components/sideNav/SideNav';
 import Create from './components/create/Create';
-import Reserve from './components/reserve/Reserve';
+import Reserve_list from './components/reserve/Reserve_list';
 import Home from './components/home/Home';
 import Login from './components/auth/Login';
 import Signup from './components/auth/signup/Signup';
@@ -20,8 +20,8 @@ import CarDetail from './components/car_detail/CarDetail';
 
 function App() {
   const modalDisplay = () => {
-    const modal = document.querySelector('.modal-background');
-    const opener = document.querySelector('#modal-displayer');
+    const modal = document.querySelector('.nav_modal-background');
+    const opener = document.querySelector('#nav_modal-displayer');
     const closer = document.querySelector('.X');
     const modal_nav_link = document.querySelectorAll('.modal_nav_link');
 
@@ -43,15 +43,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="modal-background">
-          <div className="modal">
-            <div className="modal-header">
-              <h2 className="modal-title">Menu</h2>
+        <div className="nav_modal-background">
+          <div className="nav_modal">
+            <div className="nav_modal-header">
+              <h2 className="nav_modal-title">Menu</h2>
               <div className="X">
                 <p>X</p>
               </div>
             </div>
-            <div className="modal-body">
+            <div className="nav_modal-body">
               <div className="mobile_logo_div">
                 <img src={logo} alt="Logo" className="mobile_logo" />
               </div>
@@ -73,13 +73,13 @@ function App() {
         </div>
         <SideNav />
         <div className="pages">
-          <button className="mobile_nav" onClick={modalDisplay} id="modal-displayer">
+          <button className="mobile_nav" onClick={modalDisplay} id="nav_modal-displayer">
             <List size={20} />
           </button>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/create" element={<Create />} />
-            <Route path="/reserve" element={<Reserve />} />
+            <Route path="/reserve_list" element={<Reserve_list />} />
             <Route path="/signup" element={<Signup />} />
             <Route
               path="/car"

@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
-import { models, selectModel } from '../../redux/modelReducer';
+import { models } from '../../redux/modelReducer';
+import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
 
 /* eslint-disable */
@@ -27,29 +28,23 @@ const Home = () => {
   };
 
   const getModels = () => {
-    // if (!stateModel.length > 0) {
     fetch(modelsUrl).then((data) => {
       data.json().then((dataJson) => dispatch(models(dataJson)));
     });
-    // }
   };
 
-  const emptyState = () => {
-    if(!stateModel.length > 1) {
-      stateModel = [];
-    }
-  }
-  emptyState()
+  const selectCar = (id) => {
+    fetch(modelsUrl + '/' + id).then((data) => {
+      data.json().then((dataJson) => dispatch(oneCar(dataJson)));
+    });
+  };
 
   useEffect(() => {
+    dispatch(oneCar([]));
     navToggle();
     getModels();
     console.log(stateModel);
   }, []);
-
-  const selectCar = (id) => {
-    dispatch(selectModel(id));
-  };
 
   return (
     <div className="container">
