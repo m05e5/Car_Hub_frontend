@@ -15,6 +15,9 @@ const SideNav = () => {
       </div>
       <nav>
         <ul className='nav_ul'>
+        <li className="nav_li" id='login_link'>
+            <Link className="nav_link " to="/login">Login</Link>
+          </li>
           <li className="nav_li" id='home_link'>
             <Link className="nav_link " to="/">Models</Link>
           </li>

@@ -1,0 +1,16 @@
+.second_container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid blue;
+  background-color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.container_ {
+  display: flex;
+  width: auto;
+  margin-left: 46vw;
+  margin-top: 10%;
+}
