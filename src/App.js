@@ -4,21 +4,25 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
 import { List } from 'react-bootstrap-icons';
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 import './App.css';
 import logo from './components/img/image.png';
 import SideNav from './components/sideNav/SideNav';
+import SideNavb from './components/sideNav/SideNavb';
 import Create from './components/create/Create';
 import ReserveList from './components/reserve/Reserve_list';
 import Home from './components/home/Home';
 import Login from './components/auth/Login';
+import Logout from './components/auth/Logout';
 import Signup from './components/auth/signup/Signup';
 import CarDetail from './components/car_detail/CarDetail';
+import { isConnect } from './Session';
 
 function App() {
+  const [sidenav, setSidenav] = useState(true);
   const modalDisplay = () => {
     const modal = document.querySelector('.nav_modal-background');
     const opener = document.querySelector('#nav_modal-displayer');
@@ -41,6 +45,21 @@ function App() {
 
     console.log('this is loading');
   };
+
+  const verify = () => {
+    isConnect().then((data) => {
+      if (data !== true) {
+        setSidenav(false);
+      } else {
+        setSidenav(true);
+      }
+    });
+  };
+
+  useEffect(() => {
+    verify();
+  }, []);
+
   return (
     <div className="App">
       <Router>
@@ -72,13 +91,16 @@ function App() {
             </div>
           </div>
         </div>
-        <SideNav />
+        <>
+          { sidenav ? <SideNav /> : <SideNavb />}
+        </>
         <div className="pages">
           <button type="button" className="mobile_nav" onClick={modalDisplay} id="nav_modal-displayer">
             <List size={20} />
           </button>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/create" element={<Create />} />
             <Route
               path="/reserve_list"

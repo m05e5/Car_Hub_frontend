@@ -17,7 +17,7 @@ class Login extends Component {
       .then((response) => response)
       .then((response) => {
         localStorage.setItem("token", response.headers["authorization"]);
-        console.log(localStorage.getItem('token'));
+        window.location.href ="/"
       })
       .catch((error) => {
         alert('the name or password are incorrects');
@@ -32,7 +32,6 @@ class Login extends Component {
         [e.target.name]: e.target.value,
       },
     });
-    console.log(this.state.user);
   }
 
   render() {
@@ -56,4 +55,4 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+export default Login

@@ -9,6 +9,9 @@ const SideNav = () => (
     </div>
     <nav>
       <ul className="nav_ul">
+        <li className="nav_li" id="logout_link">
+          <Link className="nav_link " to="/logout">Logout</Link>
+        </li>
         <li className="nav_li" id="home_link">
           <Link className="nav_link " to="/">Models</Link>
         </li>
