@@ -82,7 +82,7 @@ function App() {
                     <Link className="modal_nav_link" to="/create">Create</Link>
                   </li>
                   <li className="nav_li">
-                    <Link className="modal_nav_link" to="/reserve">Reserve</Link>
+                    <Link className="modal_nav_link" to="/reserve_list">Reserve</Link>
                   </li>
                 </ul>
               </nav>

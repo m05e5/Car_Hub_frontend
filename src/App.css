@@ -57,6 +57,10 @@
   font-weight: bold;
 }
 
+.nav_link:hover {
+  color: rgb(68, 68, 68);
+}
+
 .modal_nav_link {
   text-decoration: none;
   color: rgb(68, 68, 68);
