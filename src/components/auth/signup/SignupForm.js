@@ -1,5 +1,5 @@
+/*eslint-disable*/
 import React from 'react';
-/* eslint-disable */
 class SignupForm extends React.PureComponent {
   constructor(props) {
     super(props);

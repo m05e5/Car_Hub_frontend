@@ -4,15 +4,15 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-/* eslint-disable */
+
+import { List } from 'react-bootstrap-icons';
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 import './App.css';
 import logo from './components/img/image.png';
-import { List } from 'react-bootstrap-icons';
 import SideNav from './components/sideNav/SideNav';
 import Create from './components/create/Create';
-import Reserve_list from './components/reserve/Reserve_list';
+import ReserveList from './components/reserve/Reserve_list';
 import Home from './components/home/Home';
 import Login from './components/auth/Login';
 import Signup from './components/auth/signup/Signup';
@@ -23,7 +23,7 @@ function App() {
     const modal = document.querySelector('.nav_modal-background');
     const opener = document.querySelector('#nav_modal-displayer');
     const closer = document.querySelector('.X');
-    const modal_nav_link = document.querySelectorAll('.modal_nav_link');
+    const modalNavLink = document.querySelectorAll('.modal_nav_link');
 
     function closeModal() {
       modal.style.visibility = 'hidden';
@@ -32,7 +32,8 @@ function App() {
     function callp() {
       modal.style.visibility = 'visible';
     }
-    modal_nav_link.forEach((link) => {
+    modalNavLink.forEach((link) => {
+      // eslint-disable-next-line no-param-reassign
       link.onclick = closeModal;
     });
     opener.onclick = callp;
@@ -73,17 +74,20 @@ function App() {
         </div>
         <SideNav />
         <div className="pages">
-          <button className="mobile_nav" onClick={modalDisplay} id="nav_modal-displayer">
+          <button type="button" className="mobile_nav" onClick={modalDisplay} id="nav_modal-displayer">
             <List size={20} />
           </button>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/create" element={<Create />} />
-            <Route path="/reserve_list" element={(
+            <Route
+              path="/reserve_list"
+              element={(
                 <Provider store={store}>
-                  <Reserve_list />
+                  <ReserveList />
                 </Provider>
-            )} />
+            )}
+            />
             <Route path="/signup" element={<Signup />} />
             <Route
               path="/car"
