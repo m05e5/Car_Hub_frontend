@@ -19,7 +19,7 @@
 }
 
 .container_ {
-  margin-left: 16vw;
+  margin-left: 15vw;
 }
 
 .logo_div {
@@ -112,7 +112,7 @@
 }
 
 /* styling of my modal ------------------------------------------ */
-.modal-background {
+.nav_modal-background {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -126,7 +126,7 @@
   background-color: transparent;
 }
 
-.modal {
+.nav_modal {
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -141,11 +141,11 @@
   font-size: 20px;
 }
 
-.modal::-webkit-scrollbar {
+.nav_modal::-webkit-scrollbar {
   display: none;
 }
 
-.modal-header {
+.nav_modal-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -155,14 +155,14 @@
   margin-right: auto;
 }
 
-.modal-title {
+.nav_modal-title {
   font-size: 20px;
   align-self: center;
   color: black;
   text-align: left;
 }
 
-.modal-body {
+.nav_modal-body {
   display: flex;
   flex-direction: column;
   align-items: center;

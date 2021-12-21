@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import style from './model.module.css';
 import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
+import style from './model.module.css';
 
 const Car = ({ car }) => {
   const {
@@ -8,10 +9,10 @@ const Car = ({ car }) => {
   } = car;
 
   return (
-    <div className={style.car} id={id} >
-      <img src={image} alt="model" className={style.car_img}  />
+    <div className={style.car} id={id}>
+      <img src={image} alt="model" className={style.car_img} />
       <h3 className={style.car_name}>{name}</h3>
-      <div className={style.divider}/>
+      <div className={style.divider} />
       <p className={style.car_desc}>{ description }</p>
       <div className={style.medias}>
         <div className={style.media_div}>
@@ -25,7 +26,7 @@ const Car = ({ car }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Car;
