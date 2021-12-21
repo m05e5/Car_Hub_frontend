@@ -12,19 +12,16 @@ class Login extends Component {
   }
 
   connect = async() => {
-    await axios.post('http://localhost:3000/users/sign_in', this.state)
+    await axios.post('http://carhubackend.herokuapp.com/users/sign_in', this.state)
     .then(function (response) {
       return response
     })
     .then(response =>{
-      console.log(response.data);
-      console.log(response.status);
-      console.log(response.statusText);
-      console.log(response.headers);
-      console.log(response.config);
+      localStorage.setItem("token", JSON.stringify(response.headers["authorization"]));
+      console.log(localStorage.getItem("token"))
     })
     .catch(function (error) {
-      console.log(error);
+      alert("the name or password are incorrects");
       return error
     });
   }
