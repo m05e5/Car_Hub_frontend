@@ -5,10 +5,11 @@ import Carousel from 'react-material-ui-carousel';
 import { models } from '../../redux/modelReducer';
 import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
+import { goBack } from '../../Session';
 
 import Car from './Car';
 
-const modelsUrl = ' https://carhubackend.herokuapp.com/models';
+const modelsUrl = ' https://carhubackend.herokuapp.com/models_b';
 
 const Home = () => {
   let stateModel = [];
@@ -19,17 +20,25 @@ const Home = () => {
     const homeLink = document.querySelector('#home_link');
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
+    const logoutLink = document.querySelector('#logout_link');
 
+    logoutLink.classList.remove('selected_nav');
     createLink.classList.remove('selected_nav');
     homeLink.classList.add('selected_nav');
     reserveLink.classList.remove('selected_nav');
   };
 
   const getModels = () => {
-    fetch(modelsUrl).then((data) => {
+    fetch(modelsUrl,   {
+      headers: {
+        "Authentication": localStorage.getItem("token")
+      }
+  },).then((data) => {
       data.json().then((dataJson) => dispatch(models(dataJson)));
     });
   };
+
+
 
   const selectCar = (id) => {
     fetch(`${modelsUrl}/${id}`).then((data) => {
@@ -37,7 +46,9 @@ const Home = () => {
     });
   };
 
+
   useEffect(() => {
+    goBack()
     dispatch(oneCar([]));
     navToggle();
     getModels();

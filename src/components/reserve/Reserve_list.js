@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { reservations } from '../../redux/reserveReducer';
 import './reservation.css';
+import { goBack } from '../../Session';
 
 const ReserveList = () => {
   const reserveUrl = 'https://carhubackend.herokuapp.com/reserved';
@@ -9,7 +10,9 @@ const ReserveList = () => {
     const homeLink = document.querySelector('#home_link');
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
+    const logoutLink = document.querySelector('#logout_link');
 
+    logoutLink.classList.remove('selected_nav');
     createLink.classList.remove('selected_nav');
     homeLink.classList.remove('selected_nav');
     reserveLink.classList.add('selected_nav');
@@ -29,6 +32,7 @@ const ReserveList = () => {
     });
   };
   useEffect(() => {
+    goBack()
     getreservations();
     navToggle();
   }, []);

@@ -1,30 +1,33 @@
+/*eslint-disable*/
 import React, { useEffect } from 'react';
-import { goBack } from '../../Session';
+import { goBack, sessionDestroy } from '../../Session';
 
-const Create = () => {
+const Logout = () => {
+
   const navToggle = () => {
     const homeLink = document.querySelector('#home_link');
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
     const logoutLink = document.querySelector('#logout_link');
 
-    logoutLink.classList.remove('selected_nav');
-    createLink.classList.add('selected_nav');
+    logoutLink.classList.add('selected_nav');
+    createLink.classList.remove('selected_nav');
     homeLink.classList.remove('selected_nav');
     reserveLink.classList.remove('selected_nav');
   };
 
   useEffect(() => {
-    goBack()
     navToggle();
+    sessionDestroy()
   }, []);
 
-  return (
 
-    <div className="container_">
-      <p>Create</p>
-    </div>
-  );
-};
-
-export default Create;
+ {
+    return (
+      <div className="container_">
+      <h1>Loading...</h1>
+      </div>
+    )
+  }
+}
+export default Logout;
