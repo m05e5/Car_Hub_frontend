@@ -22,7 +22,7 @@ const ReserveList = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjQwMDc1MjU1LCJleHAiOjE2NDAwNzg4NTUsImp0aSI6IjUyYTU3ZGJiLTI0MmQtNGI0MC05OWMwLTAwZDZiMzI4MjhkZCJ9.D3sNG_MHuL2SUtzKk7mS0EyU7SAM-ZaEbDDsd8FeaZ4',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjQwMDc5NjE2LCJleHAiOjE2NDAwODMyMTYsImp0aSI6IjcxMDAzZDFiLTczOTYtNDU2NC05YzkxLTlmYTU4ZmI1YWVhNyJ9.cv-5AyFGOpKw6KSYrzygjGyQGvO9cIXYJvzJsQ88-9o',
       },
     }).then((data) => {
       data.json().then((dataJson) => dispatch(reservations(dataJson)));

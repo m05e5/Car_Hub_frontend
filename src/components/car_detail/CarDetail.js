@@ -28,7 +28,7 @@ const CarDetail = () => {
   return (
     <div>
       <ReserveModal />
-      <div className="container">
+      <div className="container_">
         <div className="detail_view">
           <img src={state.image} className="detail_image" alt="car" />
           <div className="car_details">
