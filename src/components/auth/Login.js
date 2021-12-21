@@ -1,9 +1,13 @@
 /*eslint-disable*/
 import React, { Component } from 'react';
+import {
+  Link,
+} from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css';
 import axios from 'axios';
-
+import './login.css'
 class Login extends Component {
   state = {
     user: {
@@ -38,20 +42,24 @@ class Login extends Component {
     return (
 
       <div className="container_login">
-        <div className="second_container">
-          <div className="form-group">
-            <label>Email </label>
-            <br />
-            <input type="text" className="form-control" name="email" onChange={this.handleChange} />
-            <br />
-            <label>Password: </label>
-            <br />
-            <input type="password" className="form-control" name="password" onChange={this.handleChange} />
-            <br />
-            <button className="btn btn-primary" onClick={() => this.connect()}>Log in</button>
-          </div>
+        <div class= "login-box">
+        <div class = "login-title">
+        <h1>Login</h1>
+        <div className="login-content">
+        <div className="input-field">
+            <input type="email" className="form-control" placeholder='email' name="email" onChange={this.handleChange} />
         </div>
-      </div>
+        <div className="input-field">
+            <input type="password" className="form-control" placeholder='password' name="password" onChange={this.handleChange} />
+          </div>
+            <div class="action">
+            <Link className="to-register-button log-b" to="/Signup">Go to Register</Link>
+            <button className="log-button log-b" onClick={() => this.connect()}>Sign in</button>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
     );
   }
 }
