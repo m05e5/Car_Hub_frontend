@@ -1,0 +1,29 @@
+.reservationPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85vw;
+}
+
+.reservationList {
+  width: 80%;
+}
+
+.reservation {
+  display: flex;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.reservationImg {
+  height: 100%;
+  max-width: 300px;
+}
+
+.reservationDesc {
+  width: 35%;
+  font-size: 14px;
+}

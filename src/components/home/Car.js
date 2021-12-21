@@ -1,8 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
 import style from './model.module.css';
-
-/* eslint-disable */
 
 const Car = ({ car }) => {
   const {

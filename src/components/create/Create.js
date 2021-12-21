@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-/* eslint-disable */
+
 const Create = () => {
   const navToggle = () => {
-    const home_link = document.querySelector('#home_link');
-    const create_link = document.querySelector('#create_link');
-    const reserve_link = document.querySelector('#reserve_link');
+    const homeLink = document.querySelector('#home_link');
+    const createLink = document.querySelector('#create_link');
+    const reserveLink = document.querySelector('#reserve_link');
 
-    create_link.classList.add('selected_nav');
-    home_link.classList.remove('selected_nav');
-    reserve_link.classList.remove('selected_nav');
+    createLink.classList.add('selected_nav');
+    homeLink.classList.remove('selected_nav');
+    reserveLink.classList.remove('selected_nav');
   };
 
   useEffect(() => {

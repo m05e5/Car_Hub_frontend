@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { CaretLeft, CaretRight } from 'react-bootstrap-icons';
@@ -9,7 +8,6 @@ import ReserveModal from '../reserve/Reserve_modal';
 const CarDetail = () => {
   const state = useSelector((state) => state.myCar);
   useEffect(() => {
-    console.log(state);
   }, []);
   const reserveModalDisplay = () => {
     const modal = document.querySelector('.reserve_modal-background');
@@ -25,8 +23,6 @@ const CarDetail = () => {
     }
     opener.onclick = callp;
     closer.onclick = closeModal;
-
-    console.log('this is loading');
   };
 
   return (

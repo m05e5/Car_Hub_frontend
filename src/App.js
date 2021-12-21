@@ -79,7 +79,11 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/create" element={<Create />} />
-            <Route path="/reserve_list" element={<Reserve_list />} />
+            <Route path="/reserve_list" element={(
+                <Provider store={store}>
+                  <Reserve_list />
+                </Provider>
+            )} />
             <Route path="/signup" element={<Signup />} />
             <Route
               path="/car"
