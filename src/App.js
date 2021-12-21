@@ -4,7 +4,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 import { List } from 'react-bootstrap-icons';
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
@@ -48,16 +48,17 @@ function App() {
 
   const verify = () => {
     isConnect().then((data) => {
-      if (data !== true){
-        setSidenav(false)
+      if (data !== true) {
+        setSidenav(false);
       } else {
-      setSidenav(true)
+        setSidenav(true);
       }
-    })};
+    });
+  };
 
-    useEffect(() => {
-      verify();
-    }, []);
+  useEffect(() => {
+    verify();
+  }, []);
 
   return (
     <div className="App">
@@ -91,7 +92,7 @@ function App() {
           </div>
         </div>
         <>
-        { sidenav ? <SideNav/> : <SideNavb/>}
+          { sidenav ? <SideNav /> : <SideNavb />}
         </>
         <div className="pages">
           <button type="button" className="mobile_nav" onClick={modalDisplay} id="nav_modal-displayer">

@@ -29,16 +29,14 @@ const Home = () => {
   };
 
   const getModels = () => {
-    fetch(modelsUrl,   {
+    fetch(modelsUrl, {
       headers: {
-        "Authentication": localStorage.getItem("token")
-      }
-  },).then((data) => {
+        Authentication: localStorage.getItem('token'),
+      },
+    }).then((data) => {
       data.json().then((dataJson) => dispatch(models(dataJson)));
     });
   };
-
-
 
   const selectCar = (id) => {
     fetch(`${modelsUrl}/${id}`).then((data) => {
@@ -46,9 +44,8 @@ const Home = () => {
     });
   };
 
-
   useEffect(() => {
-    goBack()
+    goBack();
     dispatch(oneCar([]));
     navToggle();
     getModels();

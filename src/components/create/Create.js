@@ -15,7 +15,7 @@ const Create = () => {
   };
 
   useEffect(() => {
-    goBack()
+    goBack();
     navToggle();
   }, []);
 

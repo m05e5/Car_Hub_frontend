@@ -32,7 +32,7 @@ const ReserveList = () => {
     });
   };
   useEffect(() => {
-    goBack()
+    goBack();
     getreservations();
     navToggle();
   }, []);
