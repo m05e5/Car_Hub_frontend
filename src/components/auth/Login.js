@@ -17,7 +17,7 @@ class Login extends Component {
       return response
     })
     .then(response =>{
-      localStorage.setItem("token", JSON.stringify(response.headers["authorization"]));
+      localStorage.setItem("token", response.headers["authorization"]);
       console.log(localStorage.getItem("token"))
     })
     .catch(function (error) {

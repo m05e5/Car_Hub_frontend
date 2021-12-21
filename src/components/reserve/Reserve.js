@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { isConnect, isConnectasync } from '../../Session';
 
 const Reserve = () => {
   
@@ -16,9 +17,12 @@ const Reserve = () => {
     navToggle();
   }, []);
 
+  let a = isConnect()
+  console.log(a)
+
   return (
     <div className='container_'>
-      <p>Reserve</p>
+      <p></p>
     </div>
   )
 };
