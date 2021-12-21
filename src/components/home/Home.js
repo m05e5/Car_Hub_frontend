@@ -39,7 +39,7 @@ const Home = () => {
   };
 
   const selectCar = (id) => {
-    fetch(`${modelsUrl}/${id}`).then((data) => {
+    fetch(`https://carhubackend.herokuapp.com/models/${id}`).then((data) => {
       data.json().then((dataJson) => dispatch(oneCar(dataJson)));
     });
   };

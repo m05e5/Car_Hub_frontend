@@ -27,3 +27,21 @@
   width: 35%;
   font-size: 14px;
 }
+
+.reservationDetails {
+
+}
+
+.reservationDetails p{
+  margin: 0;
+}
+
+.cancel_reservation {
+  border: none;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  padding: 1px 16px 3px 16px;
+  box-shadow: 2px 2px 2px grey;
+}

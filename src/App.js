@@ -42,8 +42,6 @@ function App() {
     });
     opener.onclick = callp;
     closer.onclick = closeModal;
-
-    console.log('this is loading');
   };
 
   const verify = () => {

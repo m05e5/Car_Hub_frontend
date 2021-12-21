@@ -18,7 +18,6 @@ const ReserveList = () => {
     homeLink.classList.remove('selected_nav');
     reserveLink.classList.add('selected_nav');
   };
-
   const reserveState = useSelector((state) => state.myReservations);
   const dispatch = useDispatch();
   const getreservations = () => {
@@ -32,6 +31,26 @@ const ReserveList = () => {
       data.json().then((dataJson) => dispatch(reservations(dataJson)));
     });
   };
+
+  const cancelReservation = (id) => {
+    const data = {
+      reserved_id: id,
+    };
+    fetch('https://carhubackend.herokuapp.com/reserved/delete', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then(() => {
+        getreservations();
+        window.location.reload(false);
+      });
+  };
+
   useEffect(() => {
     goBack();
     getreservations();
@@ -51,17 +70,21 @@ const ReserveList = () => {
               <div className="reservationDetails">
                 <p>
                   Date:
+                  {' '}
                   {reserve.date}
                 </p>
                 <p>
                   Total Price:
+                  {' '}
                   {reserve.total_price}
                   $
                 </p>
                 <p>
                   Country:
+                  {' '}
                   {reserve.country}
                 </p>
+                <button type="button" className="cancel_reservation" onClick={() => cancelReservation(reserve.id)}>Cancel</button>
               </div>
             </div>
           ))}
