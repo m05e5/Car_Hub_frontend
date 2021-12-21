@@ -2,14 +2,18 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { reservations } from '../../redux/reserveReducer';
 import './reservation.css';
+import { goBack } from '../../Session';
 
 const ReserveList = () => {
+  const token = localStorage.getItem('token');
   const reserveUrl = 'https://carhubackend.herokuapp.com/reserved';
   const navToggle = () => {
     const homeLink = document.querySelector('#home_link');
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
+    const logoutLink = document.querySelector('#logout_link');
 
+    logoutLink.classList.remove('selected_nav');
     createLink.classList.remove('selected_nav');
     homeLink.classList.remove('selected_nav');
     reserveLink.classList.add('selected_nav');
@@ -22,13 +26,14 @@ const ReserveList = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjQwMDc5NjE2LCJleHAiOjE2NDAwODMyMTYsImp0aSI6IjcxMDAzZDFiLTczOTYtNDU2NC05YzkxLTlmYTU4ZmI1YWVhNyJ9.cv-5AyFGOpKw6KSYrzygjGyQGvO9cIXYJvzJsQ88-9o',
+        Authorization: token,
       },
     }).then((data) => {
       data.json().then((dataJson) => dispatch(reservations(dataJson)));
     });
   };
   useEffect(() => {
+    goBack();
     getreservations();
     navToggle();
   }, []);

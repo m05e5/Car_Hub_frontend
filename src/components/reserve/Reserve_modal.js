@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const ReserveModal = () => {
+  const token = localStorage.getItem('token');
   const navigate = useNavigate();
   const state = useSelector((state) => state.myCar);
   const formAction = (e) => {
@@ -17,7 +18,7 @@ const ReserveModal = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjQwMDc1MjU1LCJleHAiOjE2NDAwNzg4NTUsImp0aSI6IjUyYTU3ZGJiLTI0MmQtNGI0MC05OWMwLTAwZDZiMzI4MjhkZCJ9.D3sNG_MHuL2SUtzKk7mS0EyU7SAM-ZaEbDDsd8FeaZ4',
+        Authorization: token,
       },
       body: JSON.stringify(data),
     })
