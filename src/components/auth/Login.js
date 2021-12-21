@@ -16,7 +16,7 @@ class Login extends Component {
     await axios.post('http://carhubackend.herokuapp.com/users/sign_in', this.state)
       .then((response) => response)
       .then((response) => {
-        localStorage.setItem('token', JSON.stringify(response.headers.authorization));
+        localStorage.setItem("token", response.headers["authorization"]);
         console.log(localStorage.getItem('token'));
       })
       .catch((error) => {
