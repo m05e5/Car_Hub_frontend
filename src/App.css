@@ -2,6 +2,10 @@
   display: flex;
 }
 
+#webpack-dev-server-client-overlay {
+  display: none;
+}
+
 .sideNav {
   width: 15vw;
   display: flex;
