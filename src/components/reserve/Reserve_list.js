@@ -34,7 +34,7 @@ const ReserveList = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container_">
       <div className="reservationPage">
         <h1>My Reservations</h1>
         <div className="reservationList">

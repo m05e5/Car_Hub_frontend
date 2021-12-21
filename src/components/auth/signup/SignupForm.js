@@ -5,6 +5,7 @@ class SignupForm extends React.PureComponent {
     super(props);
     this.state = {
       email: '',
+      password: '',
     };
   }
 

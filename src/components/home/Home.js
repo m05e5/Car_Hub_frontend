@@ -44,7 +44,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container_">
       <Carousel
         className={style.car_carousel}
         navButtonsAlwaysVisible

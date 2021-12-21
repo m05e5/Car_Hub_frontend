@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 
-const Create = () => {
+const Reserve = () => {
   const navToggle = () => {
     const homeLink = document.querySelector('#home_link');
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
 
-    createLink.classList.add('selected_nav');
+    createLink.classList.remove('selected_nav');
     homeLink.classList.remove('selected_nav');
-    reserveLink.classList.remove('selected_nav');
+    reserveLink.classList.add('selected_nav');
   };
 
   useEffect(() => {
@@ -16,11 +16,10 @@ const Create = () => {
   }, []);
 
   return (
-
     <div className="container_">
-      <p>Create</p>
+      <p>Reserve</p>
     </div>
   );
 };
 
-export default Create;
+export default Reserve;
