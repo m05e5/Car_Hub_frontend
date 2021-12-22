@@ -59,9 +59,6 @@ const DeleteCar = () => {
 
   return (
     <div className="container_">
-      <h2>
-        hello
-      </h2>
       {' '}
 
       <div className="carList">
