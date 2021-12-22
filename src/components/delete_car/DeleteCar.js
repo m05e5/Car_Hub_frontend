@@ -49,7 +49,6 @@ const DeleteCar = () => {
       .then((response) => response.json())
       .then(() => {
         getList();
-        window.location.reload(false);
       });
   };
 

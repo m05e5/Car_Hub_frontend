@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
+import axios from 'axios';
 import { models } from '../../redux/modelReducer';
 import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
@@ -31,13 +32,21 @@ const Home = () => {
   };
 
   const getModels = () => {
-    fetch(modelsUrl, {
+    axios.get(modelsUrl, {
       headers: {
-        Authentication: localStorage.getItem('token'),
+        authorization: localStorage.getItem('token'),
       },
-    }).then((data) => {
-      data.json().then((dataJson) => dispatch(models(dataJson)));
-    });
+    })
+      .then((response) => response)
+      .then((response) => {
+        let data = response.data;
+        console.log(data)
+        dispatch(models(data))
+      })
+      .catch((error) => {
+        alert('there is not internet connection');
+        return error;
+      });
   };
 
   const selectCar = (id) => {
