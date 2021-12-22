@@ -20,6 +20,7 @@ import Logout from './components/auth/Logout';
 import Signup from './components/auth/signup/Signup';
 import CarDetail from './components/car_detail/CarDetail';
 import { isConnect } from './Session';
+import DeleteCar from './components/delete_car/DeleteCar';
 
 function App() {
   const [sidenav, setSidenav] = useState(true);
@@ -114,6 +115,14 @@ function App() {
               element={(
                 <Provider store={store}>
                   <CarDetail />
+                </Provider>
+            )}
+            />
+            <Route
+              path="/delete_car"
+              element={(
+                <Provider store={store}>
+                  <DeleteCar />
                 </Provider>
             )}
             />
