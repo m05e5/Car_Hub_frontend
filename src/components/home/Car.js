@@ -5,12 +5,24 @@ import style from './model.module.css';
 
 const Car = ({ car }) => {
   const {
-    id, name, description, image,
+    // eslint-disable-next-line camelcase
+    id, name, description, image, background_color,
   } = car;
 
   return (
     <div className={style.car} id={id}>
-      <img src={image} alt="model" className={style.car_img} />
+      <div className={style.img_div}>
+        <div style={{
+          backgroundColor: background_color,
+          position: 'absolute',
+          height: '80%',
+          width: '80%',
+          zIndex: '-1',
+          borderRadius: '50%',
+        }}
+        />
+        <img src={image} alt="model" className={style.car_img} />
+      </div>
       <h3 className={style.car_name}>{name}</h3>
       <div className={style.divider} />
       <p className={style.car_desc}>{ description }</p>
