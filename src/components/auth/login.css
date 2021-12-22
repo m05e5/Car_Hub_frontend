@@ -90,7 +90,7 @@ body {
     position: absolute;
     width: 100vw;
     margin: 0 0;
-    border-radius: 0px;
+    border-radius: 1px;
     height: 100vh;
   }
 }
