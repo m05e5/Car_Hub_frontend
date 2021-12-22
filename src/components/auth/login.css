@@ -8,6 +8,10 @@
   box-shadow: 0 2px 25px rgb(0 0 0 / 20%);
 }
 
+.mobile_nav {
+  display: none;
+}
+
 .container_login {
   display: flex;
   width: auto;
@@ -67,4 +71,11 @@
 
 .log-button {
   background-color: rgb(118, 192, 58);
+}
+
+@media only screen and (max-width: 668px) {
+  .container_login {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
