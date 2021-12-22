@@ -55,15 +55,6 @@ function App() {
     });
   };
 
-  const verify = () => {
-    isConnect().then((data) => {
-      if (data !== true) {
-        setSidenav(false);
-      } else {
-        setSidenav(true);
-      }
-    });
-  };
   useEffect(() => {
     verify();
   }, []);
