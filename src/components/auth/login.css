@@ -1,3 +1,7 @@
+body{
+  position: relative;
+}
+
 .login-box {
   background: #fff;
   width: 500px;
@@ -8,9 +12,6 @@
   box-shadow: 0 2px 25px rgb(0 0 0 / 20%);
 }
 
-.mobile_nav {
-  display: none;
-}
 
 .container_login {
   display: flex;
@@ -73,9 +74,24 @@
   background-color: rgb(118, 192, 58);
 }
 
+.invisible {
+  display: none;
+}
+
 @media only screen and (max-width: 668px) {
   .container_login {
+    position: absolute;
+    z-index: 100;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0%;
+  }
+
+  .login-box {
+    position: absolute;
+    width: 100vw;
+    margin: 0 0;
+    border-radius: 0px;
+    height: 100vh
   }
 }

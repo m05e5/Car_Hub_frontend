@@ -16,6 +16,14 @@ class Login extends Component {
     },
   }
 
+  componentDidMount() {
+
+    const mobile_nav = document.querySelector('.mobile_nav');
+
+    mobile_nav.classList.add('invisible');
+  }
+
+
   connect = async () => {
     await axios.post('http://carhubackend.herokuapp.com/users/sign_in', this.state)
       .then((response) => response)
@@ -39,11 +47,12 @@ class Login extends Component {
   }
 
   render() {
+
     return (
 
       <div className="container_login">
-        <div class= "login-box">
-        <div class = "login-title">
+        <div className= "login-box">
+        <div className = "login-title">
         <h1>Login</h1>
         <div className="login-content">
         <div className="input-field">
