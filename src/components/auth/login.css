@@ -1,4 +1,4 @@
-body{
+body {
   position: relative;
 }
 
@@ -11,7 +11,6 @@ body{
   border-radius: 4px;
   box-shadow: 0 2px 25px rgb(0 0 0 / 20%);
 }
-
 
 .container_login {
   display: flex;
@@ -41,7 +40,7 @@ body{
 .login-content .input-field input {
   font-size: 16px;
   display: block;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   width: 100%;
   padding: 10px 1px;
   border: 0;
@@ -60,7 +59,7 @@ body{
   width: 100%;
   border: none;
   padding: 18px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   cursor: pointer;
   background: #e8e9ec;
   color: #777;
@@ -92,6 +91,6 @@ body{
     width: 100vw;
     margin: 0 0;
     border-radius: 0px;
-    height: 100vh
+    height: 100vh;
   }
 }
