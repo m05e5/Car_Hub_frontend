@@ -49,3 +49,16 @@
 .b_car_media {
   color: rgb(184, 184, 184);
 }
+
+.delete_btn {
+  margin-top: 10px;
+  padding: 5px 1rem 5px 1rem;
+  background-color: rgb(118, 192, 58);
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+.hide {
+  background-color: rgb(255, 124, 124);
+}

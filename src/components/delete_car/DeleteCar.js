@@ -83,8 +83,8 @@ const DeleteCar = () => {
               </div>
             </div>
             {item.banned
-              ? <button type="button" onClick={() => toggleBan(item.id)}> Show car </button>
-              : <button type="button" onClick={() => toggleBan(item.id)}> Hide car </button>}
+              ? <button type="button" className="delete_btn" onClick={() => toggleBan(item.id)}> Show car </button>
+              : <button type="button" className="delete_btn hide" onClick={() => toggleBan(item.id)}> Hide car </button>}
           </div>
         )) }
       </div>

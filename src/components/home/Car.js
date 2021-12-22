@@ -15,7 +15,7 @@ const Car = ({ car }) => {
         <div style={{
           backgroundColor: background_color,
           position: 'absolute',
-          height: '80%',
+          height: '75%',
           width: '80%',
           zIndex: '-1',
           borderRadius: '50%',

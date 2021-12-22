@@ -180,8 +180,11 @@
   cursor: pointer;
 }
 
-/* The Modal (background) */
-
 .down {
   margin-top: 57px;
+}
+
+/* Home page styling */
+.noItemDiv {
+  display: flex;
 }
