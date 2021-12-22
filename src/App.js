@@ -85,6 +85,12 @@ function App() {
                   <li className="nav_li">
                     <Link className="modal_nav_link" to="/reserve_list">Reserve</Link>
                   </li>
+                  <li className="nav_li">
+                    <Link className="modal_nav_link" to="/delete_car">Delete car</Link>
+                  </li>
+                  <li className="nav_li">
+                    <Link className="modal_nav_link" to="/logout">Logout</Link>
+                  </li>
                 </ul>
               </nav>
             </div>
