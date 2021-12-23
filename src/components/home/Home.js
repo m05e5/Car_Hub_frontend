@@ -40,7 +40,6 @@ const Home = () => {
       .then((response) => response)
       .then((response) => {
         const { data } = response;
-        console.log(data);
         dispatch(models(data));
       })
       .catch((error) => {
