@@ -5,19 +5,21 @@ import './reservation.css';
 import { goBack } from '../../Session';
 
 const ReserveList = () => {
+  const token = localStorage.getItem('token');
   const reserveUrl = 'https://carhubackend.herokuapp.com/reserved';
   const navToggle = () => {
     const homeLink = document.querySelector('#home_link');
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
     const logoutLink = document.querySelector('#logout_link');
+    const deleteLink = document.querySelector('#delete_link');
 
+    deleteLink.classList.remove('selected_nav');
     logoutLink.classList.remove('selected_nav');
     createLink.classList.remove('selected_nav');
     homeLink.classList.remove('selected_nav');
     reserveLink.classList.add('selected_nav');
   };
-
   const reserveState = useSelector((state) => state.myReservations);
   const dispatch = useDispatch();
   const getreservations = () => {
@@ -25,12 +27,32 @@ const ReserveList = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjQwMDc5NjE2LCJleHAiOjE2NDAwODMyMTYsImp0aSI6IjcxMDAzZDFiLTczOTYtNDU2NC05YzkxLTlmYTU4ZmI1YWVhNyJ9.cv-5AyFGOpKw6KSYrzygjGyQGvO9cIXYJvzJsQ88-9o',
+        Authorization: token,
       },
     }).then((data) => {
       data.json().then((dataJson) => dispatch(reservations(dataJson)));
     });
   };
+
+  const cancelReservation = (id) => {
+    const data = {
+      reserved_id: id,
+    };
+    fetch('https://carhubackend.herokuapp.com/reserved/delete', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then(() => {
+        getreservations();
+        window.location.reload(false);
+      });
+  };
+
   useEffect(() => {
     goBack();
     getreservations();
@@ -50,17 +72,21 @@ const ReserveList = () => {
               <div className="reservationDetails">
                 <p>
                   Date:
+                  {' '}
                   {reserve.date}
                 </p>
                 <p>
                   Total Price:
+                  {' '}
                   {reserve.total_price}
                   $
                 </p>
                 <p>
                   Country:
+                  {' '}
                   {reserve.country}
                 </p>
+                <button type="button" className="cancel_reservation" onClick={() => cancelReservation(reserve.id)}>Cancel</button>
               </div>
             </div>
           ))}

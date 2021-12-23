@@ -20,6 +20,7 @@ import Logout from './components/auth/Logout';
 import Signup from './components/auth/signup/Signup';
 import CarDetail from './components/car_detail/CarDetail';
 import { isConnect } from './Session';
+import DeleteCar from './components/delete_car/DeleteCar';
 
 function App() {
   const [sidenav, setSidenav] = useState(true);
@@ -42,8 +43,6 @@ function App() {
     });
     opener.onclick = callp;
     closer.onclick = closeModal;
-
-    console.log('this is loading');
   };
 
   const verify = () => {
@@ -84,7 +83,13 @@ function App() {
                     <Link className="modal_nav_link" to="/create">Create</Link>
                   </li>
                   <li className="nav_li">
-                    <Link className="modal_nav_link" to="/reserve">Reserve</Link>
+                    <Link className="modal_nav_link" to="/reserve_list">Reserve</Link>
+                  </li>
+                  <li className="nav_li">
+                    <Link className="modal_nav_link" to="/delete_car">Delete car</Link>
+                  </li>
+                  <li className="nav_li">
+                    <Link className="modal_nav_link" to="/logout">Logout</Link>
                   </li>
                 </ul>
               </nav>
@@ -116,6 +121,14 @@ function App() {
               element={(
                 <Provider store={store}>
                   <CarDetail />
+                </Provider>
+            )}
+            />
+            <Route
+              path="/delete_car"
+              element={(
+                <Provider store={store}>
+                  <DeleteCar />
                 </Provider>
             )}
             />

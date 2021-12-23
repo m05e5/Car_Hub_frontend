@@ -1,4 +1,3 @@
-/* eslint-disable */
 const GET_CAR = 'car/GET_CAR';
 const initialState = [];
 export const oneCar = (payload) => ({

@@ -7,11 +7,13 @@ const Create = () => {
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
     const logoutLink = document.querySelector('#logout_link');
+    const deleteLink = document.querySelector('#delete_link');
 
     logoutLink.classList.remove('selected_nav');
     createLink.classList.add('selected_nav');
     homeLink.classList.remove('selected_nav');
     reserveLink.classList.remove('selected_nav');
+    deleteLink.classList.remove('selected_nav');
   };
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-/* eslint-disable */
 const GET_RESERVATIONS = 'model/GET_RESERVATIONS';
 
 const initialState = [];

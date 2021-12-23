@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
+import axios from 'axios';
+import noItem from '../img/no_item.png';
 import { models } from '../../redux/modelReducer';
 import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
@@ -12,8 +14,7 @@ import Car from './Car';
 const modelsUrl = ' https://carhubackend.herokuapp.com/models_b';
 
 const Home = () => {
-  let stateModel = [];
-  stateModel = useSelector((state) => state.myModels);
+  const stateModel = useSelector((state) => state.myModels);
   const dispatch = useDispatch();
 
   const navToggle = () => {
@@ -21,7 +22,9 @@ const Home = () => {
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
     const logoutLink = document.querySelector('#logout_link');
+    const deleteLink = document.querySelector('#delete_link');
 
+    deleteLink.classList.remove('selected_nav');
     logoutLink.classList.remove('selected_nav');
     createLink.classList.remove('selected_nav');
     homeLink.classList.add('selected_nav');
@@ -29,21 +32,27 @@ const Home = () => {
   };
 
   const getModels = () => {
-    fetch(modelsUrl, {
+    axios.get(modelsUrl, {
       headers: {
-        Authentication: localStorage.getItem('token'),
+        authorization: localStorage.getItem('token'),
       },
-    }).then((data) => {
-      data.json().then((dataJson) => dispatch(models(dataJson)));
-    });
+    })
+      .then((response) => response)
+      .then((response) => {
+        const { data } = response;
+        dispatch(models(data));
+      })
+      .catch((error) => {
+        alert('there is not internet connection');
+        return error;
+      });
   };
 
   const selectCar = (id) => {
-    fetch(`${modelsUrl}/${id}`).then((data) => {
+    fetch(`https://carhubackend.herokuapp.com/models/${id}`).then((data) => {
       data.json().then((dataJson) => dispatch(oneCar(dataJson)));
     });
   };
-
   useEffect(() => {
     goBack();
     dispatch(oneCar([]));
@@ -53,7 +62,21 @@ const Home = () => {
 
   return (
     <div className="container_">
+      {stateModel === 0
+        ?? (
+          <div className="noItemDiv">
+            <img src={noItem} alt="no item" />
+            <h2>No Car Yet. Create one now</h2>
+            <NavLink to="/create">
+              <div className="home_add_link">
+                Add your Car
+              </div>
+            </NavLink>
+          </div>
+        )}
+
       <Carousel
+        id="pc_carousel"
         className={style.car_carousel}
         navButtonsAlwaysVisible
         swipe
@@ -82,6 +105,7 @@ const Home = () => {
         ))}
       </Carousel>
       <Carousel
+        id="mobile_carousel"
         className={style.mobile_carousel}
         navButtonsAlwaysVisible
         swipe

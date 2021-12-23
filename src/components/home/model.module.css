@@ -30,9 +30,17 @@
   margin: 1rem;
 }
 
+.img_div {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .car_img {
   width: 100%;
-  height: 40%;
+  height: 100%;
 }
 
 .car_name {
@@ -57,7 +65,7 @@
 .media_div {
   border-radius: 25px;
   border: 2px solid rgb(184, 184, 184);
-  padding: 7px 7px 4px 7px;
+  padding: 1px 7px 4px 7px;
   margin: 0 7px 0 7px;
 }
 

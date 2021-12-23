@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// eslint-disable-next-line import/prefer-default-export
 export const isConnect = async () => {
   let answer = false;
   let token = '';
@@ -21,7 +22,6 @@ export const isConnect = async () => {
       return answer;
     })
     .catch((error) => {
-      console.log(error);
       alert('there is not internet connection');
       return error;
     });
@@ -68,7 +68,6 @@ export const sessionDestroy = async () => {
       return true;
     })
     .catch((error) => {
-      console.log(error);
       alert('there is not internet connection');
       return error;
     });

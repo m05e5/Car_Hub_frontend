@@ -21,6 +21,9 @@ const SideNav = () => (
         <li className="nav_li" id="reserve_link">
           <Link className="nav_link" to="/reserve_list">My Reservations</Link>
         </li>
+        <li className="nav_li" id="delete_link">
+          <Link className="nav_link" to="/delete_car">Delete Car</Link>
+        </li>
       </ul>
     </nav>
     <div />

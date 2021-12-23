@@ -15,6 +15,13 @@ class SignupForm extends Component {
     },
   }
 
+  componentDidMount() {
+
+    const mobile_nav = document.querySelector('.mobile_nav');
+
+    mobile_nav.classList.add('invisible');
+  }
+
   register = async () => {
     await axios.post('http://carhubackend.herokuapp.com/users/', this.state)
       .then((response) => response)
