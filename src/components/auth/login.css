@@ -29,7 +29,6 @@ body {
   text-align: center;
 }
 
-
 .input-field {
   padding: 12px 5px;
 }
@@ -68,7 +67,7 @@ body {
 
 .log-button {
   background-color: rgb(118, 192, 58);
-  color:white
+  color: white;
 }
 
 .invisible {

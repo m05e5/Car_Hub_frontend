@@ -8,7 +8,6 @@ import ReserveModal from '../reserve/Reserve_modal';
 const CarDetail = () => {
   const state = useSelector((state) => state.myCar);
   useEffect(() => {
-    console.log(state);
   }, []);
   const reserveModalDisplay = () => {
     const modal = document.querySelector('.reserve_modal-background');

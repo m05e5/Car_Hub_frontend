@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
 import { banList } from '../../redux/banCarReducer';
 import './delete_car.css';
-import { goBack } from '../../Session'
+import { goBack } from '../../Session';
 
 const DeleteCar = () => {
   const state = useSelector((state) => state.myBan);
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
   const navToggle = () => {
-    goBack()
+    goBack();
     const homeLink = document.querySelector('#home_link');
     const createLink = document.querySelector('#create_link');
     const reserveLink = document.querySelector('#reserve_link');
