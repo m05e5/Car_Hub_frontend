@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
 import axios from 'axios';
-import noItem from '../img/no_item.png';
 import { models } from '../../redux/modelReducer';
 import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
@@ -62,18 +61,6 @@ const Home = () => {
 
   return (
     <div className="container_">
-      {stateModel === 0
-        ?? (
-          <div className="noItemDiv">
-            <img src={noItem} alt="no item" />
-            <h2>No Car Yet. Create one now</h2>
-            <NavLink to="/create">
-              <div className="home_add_link">
-                Add your Car
-              </div>
-            </NavLink>
-          </div>
-        )}
 
       <Carousel
         id="pc_carousel"
