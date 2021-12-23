@@ -53,7 +53,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 👤 **Caleb Moses**
 
 - Github: [@m05e5](https://github.com/m05e5)
-- Linkedin: [caleb Moses](https://www.linkedin.com/in/caleb-moses-0a1b531b9/)
+- Linkedin: [caleb Moses](https://www.linkedin.com/in/caleb-moses/)
 
 ## 🤝 Contributing
 
