@@ -21,45 +21,60 @@ body {
 }
 
 .labeled {
-    font-size: 16px;
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    padding: 10px 1px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-content: center;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  padding: 10px 1px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-content: center;
 }
 
 .tri {
-    width: 30%;
+  width: 30%;
 }
 
-.label{
-    width: 20%;
-    margin-bottom: 1px;
-    text-align: center;
+.label {
+  text-align: left;
+  margin-top: 2%;
+  height: 50%;
+  width: 15%;
+  margin-bottom: 1px;
+}
+
+.label-color {
+  width: 25%;
 }
 
 .double {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .input {
   font-size: 16px;
   display: block;
   font-family: "Rubik", sans-serif;
-  width: 40%;
+  width: 35%;
   padding: 10px 1px;
   border: 0;
   border-bottom: 1px solid #747474;
   outline: none;
 }
 
-.linput{
-    width: 80%;
+.linput {
+  width: 80%;
+}
+.bigput {
+  width: 80%;
+  border: 2px;
+  border-radius: 1px;
+  border-style: solid;
+  border-color: #747474;
+  height: 100px;
+  text-align: start;
 }
 
 .add-b {
