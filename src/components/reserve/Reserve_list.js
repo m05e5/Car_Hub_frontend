@@ -38,6 +38,7 @@ const ReserveList = () => {
     const data = {
       reserved_id: id,
     };
+    goBack();
     fetch('https://carhubackend.herokuapp.com/reserved/delete', {
       method: 'POST',
       headers: {

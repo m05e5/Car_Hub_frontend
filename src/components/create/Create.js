@@ -44,6 +44,7 @@ class SignupForm extends Component {
   };
 
   newcar = async () => {
+    goBack()
     let fee =  parseFloat(this.state.car.fee);
     let price = parseFloat(this.state.car.price);
     let horse_power = parseFloat(this.state.car.horse_power);
