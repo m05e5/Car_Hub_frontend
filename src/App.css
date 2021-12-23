@@ -81,6 +81,17 @@
   color: white;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* remove number input arrows */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @media only screen and (max-width: 668px) {
   .sideNav {
     display: none;
