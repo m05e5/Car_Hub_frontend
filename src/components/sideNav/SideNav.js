@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  Facebook, Twitter, Instagram, Whatsapp,
+} from 'react-bootstrap-icons';
 import logo from '../img/image.png';
 
 const SideNav = () => (
@@ -27,7 +30,22 @@ const SideNav = () => (
       </ul>
     </nav>
     <div />
-    <div />
+    <div className="sideNavMedia">
+      <div className="b_car_medias">
+        <div className="b_car_media_div">
+          <Facebook className="b_car_media" />
+        </div>
+        <div className="b_car_media_div">
+          <Twitter className="b_car_media" />
+        </div>
+        <div className="b_car_media_div">
+          <Instagram className="b_car_media" />
+        </div>
+        <div className="b_car_media_div">
+          <Whatsapp className="b_car_media" />
+        </div>
+      </div>
+    </div>
   </div>
 );
 

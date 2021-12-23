@@ -120,21 +120,21 @@ class SignupForm extends Component {
               </div>
               <div className="double">
                 <div className="labeled">
-                  <label htmlFor="price" className='label' className='label'>Price</label>
+                  <label htmlFor="price" className='label'>Price</label>
                   <input required type="number" min="1" className="input linput" placeholder='1' id="price" name="price" onChange={this.handleChange} />
                 </div>
                 <div className="labeled">
-                  <label htmlFor="fee" className='label' className='label'>Fee</label>
+                  <label htmlFor="fee" className='label'>Fee</label>
                   <input required type="number" min="1" className="input linput" placeholder='1' name="fee" id="fee" onChange={this.handleChange} />
                 </div>
               </div>
               <div className="double">
                 <div className="labeled">
-                  <label htmlFor="horse_power" className='label' className='label'>Horse Power</label>
+                  <label htmlFor="horse_power" className='label'>Horse Power</label>
                   <input required type="number" min="1" className=" input linput" placeholder='1' name="horse_power" id="horse_power" onChange={this.handleChange} />
                 </div>
                 <div className="labeled">
-                  <label htmlFor="image" className='label' className='label'>Image</label>
+                  <label htmlFor="image" className='label'>Image</label>
                   <input required type="file" className=" input linput" name="image" id="image" onChange={this.handleImage} />
                 </div>
               </div>
