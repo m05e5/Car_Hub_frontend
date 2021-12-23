@@ -98,6 +98,7 @@ input[type=number] {
   justify-content: center;
   margin-bottom: 1rem;
 }
+
 @media only screen and (max-width: 668px) {
   .sideNav {
     display: none;

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Whatsapp } from 'react-bootstrap-icons';
+import {
+  Facebook, Twitter, Instagram, Whatsapp,
+} from 'react-bootstrap-icons';
 import logo from '../img/image.png';
 
 const SideNav = () => (
