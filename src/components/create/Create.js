@@ -46,16 +46,15 @@ class SignupForm extends Component {
   newcar = async () => {
     let fee =  parseFloat(this.state.car.fee);
     let price = parseFloat(this.state.car.price);
-    let horse_power =
+    let horse_power = parseFloat(this.state.car.horse_power);
     let formData = new FormData
       formData.append("name",this.state.car.name)
       formData.append("description", this.state.car.description)
       formData.append("price",price )
-      formData.append("fee")
-      formData.append("horse_power", parseFloat(this.state.car.horse_power))
+      formData.append("fee",fee)
+      formData.append("horse_power",horse_power)
       formData.append("background_color", this.state.car.background_color)
       formData.append("image", this.state.car.image)
-    console.log(formData)
 
     await axios.post('http://carhubackend.herokuapp.com/models/', formData, {
       headers: {
@@ -66,6 +65,7 @@ class SignupForm extends Component {
       .then((response) => {
         console.log(response.data.message)
         if (response.data.message == 'Car saved!') {
+          window.location.href ="/"
           return true
         } else {
           alert(response.data.message)
@@ -84,7 +84,6 @@ class SignupForm extends Component {
         [e.target.name]: e.target.value,
       },
     });
-    console.log(this.state.car)
   }
 
   handleImage = async (e) => {
@@ -94,7 +93,6 @@ class SignupForm extends Component {
         [e.target.name]: e.target.files[0],
       },
     });
-    console.log(this.state.car)
   }
   render() {
     return (
