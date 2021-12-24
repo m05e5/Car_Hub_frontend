@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   Facebook, Twitter, Instagram, Whatsapp,
 } from 'react-bootstrap-icons';
@@ -13,19 +13,19 @@ const SideNav = () => (
     <nav>
       <ul className="nav_ul">
         <li className="nav_li" id="logout_link">
-          <Link className="nav_link " to="/logout">Logout</Link>
+          <NavLink className="nav_link " to="/logout">Logout</NavLink>
         </li>
         <li className="nav_li" id="home_link">
-          <Link className="nav_link " to="/">Models</Link>
+          <NavLink className="nav_link " to="/">Models</NavLink>
         </li>
         <li className="nav_li" id="create_link">
-          <Link className="nav_link" to="/create">Create</Link>
+          <NavLink className="nav_link" to="/create">Create</NavLink>
         </li>
         <li className="nav_li" id="reserve_link">
-          <Link className="nav_link" to="/reserve_list">My Reservations</Link>
+          <NavLink className="nav_link" to="/reserve_list">My Reservations</NavLink>
         </li>
         <li className="nav_li" id="delete_link">
-          <Link className="nav_link" to="/delete_car">Delete Car</Link>
+          <NavLink className="nav_link" to="/delete_car">Delete Car</NavLink>
         </li>
       </ul>
     </nav>

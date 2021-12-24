@@ -16,12 +16,6 @@ class Login extends Component {
     },
   }
 
-  componentDidMount() {
-    const mobileNav = document.querySelector('.mobile_nav');
-
-    mobileNav.classList.add('invisible');
-  }
-
   connect = async () => {
     await axios.post('http://carhubackend.herokuapp.com/users/sign_in', this.state)
       .then((response) => response)

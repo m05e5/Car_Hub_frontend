@@ -2,7 +2,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
+  NavLink,
 } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { List } from 'react-bootstrap-icons';
@@ -77,19 +77,19 @@ function App() {
               <nav>
                 <ul className="nav_ul">
                   <li className="nav_li">
-                    <Link className=" modal_nav_link " to="/">Models</Link>
+                    <NavLink className=" modal_nav_link " to="/">Models</NavLink>
                   </li>
                   <li className="nav_li">
-                    <Link className="modal_nav_link" to="/create">Create</Link>
+                    <NavLink className="modal_nav_link" to="/create">Create</NavLink>
                   </li>
                   <li className="nav_li">
-                    <Link className="modal_nav_link" to="/reserve_list">Reserve</Link>
+                    <NavLink className="modal_nav_link" to="/reserve_list">Reserve</NavLink>
                   </li>
                   <li className="nav_li">
-                    <Link className="modal_nav_link" to="/delete_car">Delete car</Link>
+                    <NavLink className="modal_nav_link" to="/delete_car">Delete car</NavLink>
                   </li>
                   <li className="nav_li">
-                    <Link className="modal_nav_link" to="/logout">Logout</Link>
+                    <NavLink className="modal_nav_link" to="/logout">Logout</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -100,7 +100,7 @@ function App() {
           { sidenav ? <SideNav /> : <SideNavb />}
         </>
         <div className="pages">
-          <button type="button" className="mobile_nav" onClick={modalDisplay} id="nav_modal-displayer">
+          <button type="button" className={window.location.pathname === '/login' || window.location.pathname === '/signup' ? 'invisible' : 'mobile_nav'} onClick={modalDisplay} id="nav_modal-displayer">
             <List size={20} />
           </button>
           <Routes>
