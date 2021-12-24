@@ -12,10 +12,10 @@ const SideNavb = () => (
     </div>
     <nav>
       <ul className="nav_ul">
-        <li className="nav_li" id="login_navlink">
+        <li className="nav_li" id="login_link">
           <NavLink className="nav_link" to="/login">Login</NavLink>
         </li>
-        <li className="nav_li" id="signup_navlink">
+        <li className="nav_li" id="signup_link">
           <NavLink className="nav_link" to="/signup">Signup</NavLink>
         </li>
       </ul>
