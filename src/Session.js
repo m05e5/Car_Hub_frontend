@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Modal } from '@daypilot/modal';
 
 // eslint-disable-next-line import/prefer-default-export
 export const isConnect = async () => {
@@ -64,6 +65,10 @@ export const sessionDestroy = async () => {
       window.location.href = '/login';
       return true;
     })
-    .catch((error) => error);
+    .catch((error) => {
+      Modal.alert('Hi!');
+      // alert('there is not internet connection');
+      return error;
+    });
   return answer;
 };
