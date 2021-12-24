@@ -22,7 +22,10 @@ export const isConnect = async () => {
       }
       return answer;
     })
-    .catch((error) => error);
+    .catch((error) => {
+      Modal.alert('there is not internet connection');
+      return error;
+    });
   return answer;
 };
 

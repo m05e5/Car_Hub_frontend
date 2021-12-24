@@ -7,6 +7,7 @@ import { models } from '../../redux/modelReducer';
 import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
 import { goBack } from '../../Session';
+import { Modal } from '@daypilot/modal';
 
 import Car from './Car';
 
@@ -41,7 +42,10 @@ const Home = () => {
         const { data } = response;
         dispatch(models(data));
       })
-      .catch((error) => error);
+      .catch((error) => {
+        Modal.alert('there is not internet connection');
+        return error;
+      });
   };
 
   const selectCar = (id) => {

@@ -7,6 +7,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css';
 import axios from 'axios';
+import { Modal } from '@daypilot/modal';
 
 class Login extends Component {
   state = {
@@ -23,7 +24,10 @@ class Login extends Component {
         localStorage.setItem('token', response.headers.authorization);
         window.location.href = '/';
       })
-      .catch((error) => error);
+      .catch((error) => {
+        Modal.alert('the name or password are incorrects');
+        return error;
+      });;
   }
 
   handleChange = async (e) => {
