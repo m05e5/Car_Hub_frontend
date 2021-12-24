@@ -15,7 +15,7 @@ export const isConnect = async () => {
   })
     .then((response) => response)
     .then((response) => {
-      if (response.data.message === "If you see this, you're in!") {
+      if (response.data.session === 200) {
         answer = true;
       } else {
         localStorage.setItem('token', '');
