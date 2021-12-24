@@ -12,11 +12,11 @@ const SideNavb = () => (
     </div>
     <nav>
       <ul className="nav_ul">
-        <li className={window.location.pathname === '/login' ? 'nav_li selected_nav' : 'nav_li'} id="login_Navlink">
-          <NavLink className="nav_Navlink" to="/login">Login</NavLink>
+        <li className="nav_li" id="login_navlink">
+          <NavLink className="nav_link" to="/login">Login</NavLink>
         </li>
-        <li className={window.location.pathname === '/signup' ? 'nav_li selected_nav' : 'nav_li'} id="signup_Navlink">
-          <NavLink className="nav_Navlink" to="/signup">Signup</NavLink>
+        <li className="nav_li" id="signup_navlink">
+          <NavLink className="nav_link" to="/signup">Signup</NavLink>
         </li>
       </ul>
     </nav>
