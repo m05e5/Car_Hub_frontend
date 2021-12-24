@@ -12,6 +12,9 @@ const SideNavb = () => (
         <li className="nav_li selected_nav" id="login_link">
           <Link className="nav_link" to="/login">Login</Link>
         </li>
+        <li className="nav_li" id="signup_link">
+          <Link className="nav_link" to="/signup">Signup</Link>
+        </li>
       </ul>
     </nav>
     <div />
