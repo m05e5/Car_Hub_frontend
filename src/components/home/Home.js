@@ -41,10 +41,7 @@ const Home = () => {
         const { data } = response;
         dispatch(models(data));
       })
-      .catch((error) => {
-        alert('there is not internet connection');
-        return error;
-      });
+      .catch((error) => error);
   };
 
   const selectCar = (id) => {
