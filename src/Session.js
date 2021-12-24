@@ -21,10 +21,7 @@ export const isConnect = async () => {
       }
       return answer;
     })
-    .catch((error) => {
-      alert('there is not internet connection');
-      return error;
-    });
+    .catch((error) => error);
   return answer;
 };
 
@@ -67,9 +64,6 @@ export const sessionDestroy = async () => {
       window.location.href = '/login';
       return true;
     })
-    .catch((error) => {
-      alert('there is not internet connection');
-      return error;
-    });
+    .catch((error) => error);
   return answer;
 };

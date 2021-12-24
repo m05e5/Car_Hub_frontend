@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { CaretLeft, CaretRight } from 'react-bootstrap-icons';
 import { NavLink } from 'react-router-dom';
@@ -7,8 +7,6 @@ import ReserveModal from '../reserve/Reserve_modal';
 
 const CarDetail = () => {
   const state = useSelector((state) => state.myCar);
-  useEffect(() => {
-  }, []);
   const reserveModalDisplay = () => {
     const modal = document.querySelector('.reserve_modal-background');
     const opener = document.querySelector('#reserve_modal-displayer');
