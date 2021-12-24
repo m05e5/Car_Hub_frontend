@@ -15,7 +15,7 @@ export const isConnect = async () => {
   })
     .then((response) => response)
     .then((response) => {
-      if (response.data.session === 200) {
+      if (response.status === 200) {
         answer = true;
       } else {
         localStorage.setItem('token', '');
@@ -23,7 +23,6 @@ export const isConnect = async () => {
       return answer;
     })
     .catch((error) => {
-      Modal.alert('there is not internet connection');
       return error;
     });
   return answer;
