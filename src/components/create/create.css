@@ -1,0 +1,114 @@
+body {
+  position: relative;
+}
+
+.add-box {
+  background: #fff;
+  width: 83.7vw;
+  margin: 65px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title h1 {
+  padding: 35px 35px 0 35px;
+  font-weight: 300;
+}
+
+.login-content {
+  padding: 35px;
+  text-align: center;
+}
+
+.labeled {
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  padding: 10px 1px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.tri {
+  width: 30%;
+}
+
+.label {
+  text-align: left;
+  margin-top: 2%;
+  height: 50%;
+  width: 15%;
+  margin-bottom: 1px;
+}
+
+.label-color {
+  width: 25%;
+}
+
+.double {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  font-size: 16px;
+  display: block;
+  font-family: "Rubik", sans-serif;
+  width: 35%;
+  padding: 10px 1px;
+  border: 0;
+  border-bottom: 1px solid #747474;
+  outline: none;
+}
+
+.linput {
+  width: 80%;
+}
+
+.bigput {
+  width: 80%;
+  border: 2px;
+  border-radius: 1px;
+  border-style: solid;
+  border-color: #747474;
+  height: 100px;
+  text-align: start;
+}
+
+.add-b {
+  width: 30%;
+  border: none;
+  padding: 18px;
+  font-family: "Rubik", sans-serif;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.log-button {
+  background-color: rgb(118, 192, 58);
+}
+
+.invisible {
+  display: none;
+}
+
+@media only screen and (max-width: 668px) {
+  .container_login {
+    position: absolute;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+  }
+
+  .add-box {
+    position: absolute;
+    width: 100vw;
+    margin: 0 0;
+    border-radius: 1px;
+    height: 100vh;
+  }
+}
