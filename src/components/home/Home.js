@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
 import axios from 'axios';
+import { Modal } from '@daypilot/modal';
 import { models } from '../../redux/modelReducer';
 import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
 import { goBack } from '../../Session';
-import { Modal } from '@daypilot/modal';
 
 import Car from './Car';
 

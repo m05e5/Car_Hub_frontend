@@ -22,9 +22,7 @@ export const isConnect = async () => {
       }
       return answer;
     })
-    .catch((error) => {
-      return error;
-    });
+    .catch((error) => error);
   return answer;
 };
 
