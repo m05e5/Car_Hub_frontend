@@ -7,6 +7,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../login.css'
 import axios from 'axios';
+import { Modal } from '@daypilot/modal';
 class SignupForm extends Component {
   state = {
     user: {
@@ -23,11 +24,11 @@ class SignupForm extends Component {
         if(response.data.message == 'Signed up sucessfully.'){
           window.location.href ="/login"
         } else {
-          alert("all the data should be filed")
+          Modal.alert("all the data should be filed")
         }
       })
       .catch((error) => {
-        alert("the email is already registered");
+        Modal.alert("the email is already registered");
       });
   }
 

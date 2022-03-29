@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './create.css'
 import axios from 'axios';
 import { goBack } from '../../Session';
+import { Modal } from '@daypilot/modal';
 
 
 class SignupForm extends Component {
@@ -19,7 +20,7 @@ class SignupForm extends Component {
         price: 1,
         fee: 1,
         horse_power: 1,
-        background_color: "",
+        background_color: "#ffffff",
         image: null
       }
     }
@@ -69,12 +70,12 @@ class SignupForm extends Component {
           window.location.href ="/"
           return true
         } else {
-          alert(response.data.message)
+          Modal.alert(response.data.message)
           return false
         }
       })
       .catch((error) => {
-        alert(error);
+        Modal.alert(error);
       });
   }
 
@@ -97,6 +98,7 @@ class SignupForm extends Component {
   }
   render() {
     return (
+      <form onSubmit={() => this.newcar()}>
 
       <div className="container_">
         <div className="add-box">
@@ -142,11 +144,12 @@ class SignupForm extends Component {
                 <label htmlFor="description" className='label' >Description</label>
                 <textarea required className="input bigput" placeholder='description' maxLength="250" minLength="1" name="description" onChange={this.handleChange} />
               </div>
-              <button className="log-button add-b" onClick={() => this.newcar()}>Create</button>
+              <button type="submit" className="log-button add-b">Submit</button>
             </div>
           </div>
         </div>
       </div>
+      </form>
     );
   }
 }

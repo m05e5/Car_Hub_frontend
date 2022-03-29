@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
 import axios from 'axios';
+import { Modal } from '@daypilot/modal';
 import { models } from '../../redux/modelReducer';
 import { oneCar } from '../../redux/oneCarReducer';
 import style from './model.module.css';
@@ -41,7 +42,10 @@ const Home = () => {
         const { data } = response;
         dispatch(models(data));
       })
-      .catch((error) => error);
+      .catch((error) => {
+        Modal.alert('there is not internet connection');
+        return error;
+      });
   };
 
   const selectCar = (id) => {
