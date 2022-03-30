@@ -58,7 +58,7 @@ class SignupForm extends Component {
       formData.append("background_color", this.state.car.background_color)
       formData.append("image", this.state.car.image)
 
-    await axios.post('http://carhubackend.herokuapp.com/models/', formData, {
+    await axios.post('https://carhubackend.herokuapp.com/models/', formData, {
       headers: {
         authorization: localStorage.getItem('token'),
       },

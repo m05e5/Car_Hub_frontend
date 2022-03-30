@@ -25,7 +25,7 @@ const DeleteCar = () => {
   };
 
   const getList = () => {
-    fetch('http://carhubackend.herokuapp.com/list', {
+    fetch('https://carhubackend.herokuapp.com/list', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

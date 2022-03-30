@@ -1,14 +1,13 @@
 import axios from 'axios';
 import { Modal } from '@daypilot/modal';
 
-// eslint-disable-next-line import/prefer-default-export
 export const isConnect = async () => {
   let answer = false;
   let token = '';
   if (localStorage.getItem('token') != null) {
     token = localStorage.getItem('token');
   }
-  await axios.get('http://carhubackend.herokuapp.com/member-data', {
+  await axios.get('https://carhubackend.herokuapp.com/member-data', {
     headers: {
       authorization: token,
     },
@@ -53,7 +52,7 @@ export const sessionDestroy = async () => {
   if (token === null) {
     token = '';
   }
-  await axios.delete('http://carhubackend.herokuapp.com/users/sign_out', {
+  await axios.delete('https://carhubackend.herokuapp.com/users/sign_out', {
     headers: {
       authorization: token,
     },
