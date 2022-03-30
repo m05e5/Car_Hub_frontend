@@ -17,7 +17,7 @@ class SignupForm extends Component {
   }
 
   register = async () => {
-    await axios.post('http://carhubackend.herokuapp.com/users/', this.state)
+    await axios.post('https://carhubackend.herokuapp.com/users/', this.state)
       .then((response) => response)
       .then((response) => {
         console.log(response.data.message)
